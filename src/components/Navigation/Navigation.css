@@ -1,0 +1,316 @@
+.navigation {
+  background-color: var(--color-black);
+  padding: var(--spacing-sm) 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos da logo */
+.logo-image {
+  height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+  animation: logoEntry 1s ease-out forwards, logoBreathing 4s ease-in-out 1s infinite;
+}
+
+.nav-logo:hover .logo-image {
+  animation: logoPulse 0.6s ease-in-out infinite alternate;
+  filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+/* Estilos do tagline */
+.logo-tagline {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+  margin-left: 2px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover .logo-tagline {
+  opacity: 1;
+}
+
+/* Menu de navegação */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+  animation: menuEntry 0.8s ease-out 0.2s backwards;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-red-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--color-gold);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Menu Hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-cream);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Animações */
+
+/* Animação de "respiração" - mais orgânica e natural */
+@keyframes logoBreathing {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+  }
+  25% {
+    transform: scale(1.03) translateY(-1px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    transform: scale(0.98) translateY(1px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+  }
+  75% {
+    transform: scale(1.02) translateY(-0.5px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  }
+}
+
+/* Animação de pulso no hover - mais intensa */
+@keyframes logoPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(253, 253, 253, 0.8));
+  }
+  50% {
+    transform: scale(1.1) rotate(-2deg);
+    filter: brightness(0) invert(1) drop-shadow(0 0 30px rgb(255, 255, 255));
+  }
+  100% {
+    transform: scale(1.05) rotate(2deg);
+    filter: brightness(0) invert(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+  }
+}
+
+/* Animação de entrada mais suave */
+@keyframes logoEntry {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.5) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(5px) scale(1.1) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Animação de entrada do menu */
+@keyframes menuEntry {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--color-black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: var(--spacing-xl);
+    gap: var(--spacing-md);
+    transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: none;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-menu li {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: none;
+  }
+  
+  .nav-menu.active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.4s ease;
+  }
+  
+  .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+  .nav-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+  
+  .nav-menu a {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .logo-image {
+    height: 35px;
+  }
+  
+  .logo-tagline {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: var(--spacing-xs) 0;
+  }
+  
+  .logo-image {
+    height: 30px;
+  }
+  
+  .nav-menu a {
+    font-size: 1.25rem;
+  }
+}
+
+/* Overlay para mobile */
+@media (max-width: 768px) {
+  .nav-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(28, 28, 28, 0.98) 100%
+    );
+    z-index: -1;
+  }
+  
+  /* Adiciona uma sombra suave quando o menu está aberto */
+  .nav-menu.active {
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Desabilita scroll quando menu está aberto (aplicado via JS) */
+.menu-open {
+  overflow: hidden;
+}

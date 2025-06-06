@@ -1,0 +1,547 @@
+/* Paleta dark: tons escuros com acentos dourados */
+.contato-footer {
+  background-color: #0d0d0d;
+  background-image: 
+    repeating-linear-gradient(45deg, 
+      rgba(25, 25, 25, 0.6) 0px,
+      rgba(25, 25, 25, 0.6) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  color: #e0e0e0;
+  padding: 0;
+  border-top: 3px solid #d4af37;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0;
+  position: relative;
+}
+
+.contato-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 8, 8, 0.95);
+  z-index: 0;
+}
+
+.contato-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 24px 12px 24px;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.contato-info {
+  flex: 1 1 320px;
+  min-width: 260px;
+}
+
+.contato-info h2 {
+  color: #d4af37;
+  font-family: 'Merriweather', serif;
+  font-size: 1.9rem;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.contato-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+.contato-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.contato-info li {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.contato-info li:hover {
+  transform: translateY(-2px);
+}
+
+.contato-info li i {
+  margin-right: 8px;
+  color: #d4af37;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contato-info li:hover i {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.contato-info a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 2px 4px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.contato-info a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.contato-info a:hover::after {
+  width: 100%;
+}
+
+.contato-info a:hover {
+  color: #fff;
+  background-color: rgba(212, 175, 55, 0.15);
+}
+
+.contato-likebox {
+  flex: 0 1 280px;
+  min-width: 240px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  margin-top: 8px;
+  backdrop-filter: none;
+  position: relative;
+  overflow: visible;
+}
+
+/* Remover textura de fundo */
+
+.like-title.vintage {
+  color: #d4af37;
+  font-size: 1rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.like-btn.vintage {
+  background: rgba(25, 25, 25, 0.8);
+  color: #d4af37;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  padding: 6px 16px;
+  margin-bottom: 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  margin-left: 12px;
+}
+
+.like-btn.vintage:hover:not(.liked) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background: rgba(35, 35, 35, 0.9);
+  border-color: #d4af37;
+}
+
+.like-btn.vintage:active {
+  transform: scale(0.98);
+}
+
+.like-btn.vintage.liked {
+  background: #d4af37;
+  color: #000;
+  border: 1px solid #d4af37;
+  cursor: default;
+}
+
+.like-btn.vintage span[role="img"] {
+  display: inline-block;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.like-btn.vintage:hover span[role="img"]:not(.liked) {
+  transform: scale(1.1);
+}
+
+.like-btn.vintage .like-count {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #d4af37;
+  background: rgba(8, 8, 8, 0.8);
+  border-radius: 5px;
+  padding: 2px 6px;
+  min-width: 24px;
+  display: inline-block;
+  border: 1px solid #333;
+  transition: all 0.3s;
+}
+
+.like-btn.vintage.liked .like-count {
+  background: #000;
+  color: #d4af37;
+}
+
+.contato-copy {
+  text-align: center;
+  color: #000;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  padding: 8px 0;
+  letter-spacing: 0.5px;
+  font-family: 'Merriweather', serif;
+  position: relative;
+  z-index: 1;
+  background: #d4af37;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-image: 
+    repeating-linear-gradient(45deg, 
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+@media (max-width: 900px) {
+  .contato-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 20px 10px 8px 10px;
+  }
+  .contato-likebox {
+    margin: 4px auto 0;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    padding: 0;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    height: auto;
+    border-radius: 0;
+  }
+  .like-title.vintage {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 0.85rem;
+    flex: 1;
+    line-height: 1.2;
+  }
+  .like-btn.vintage {
+    margin-left: 0;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    gap: 5px;
+    min-height: auto;
+  }
+  .like-btn.vintage .like-count {
+    font-size: 0.85rem;
+    padding: 1px 5px;
+    min-width: 20px;
+  }
+  .contato-info ul {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .contato-info li {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-info h2 {
+    font-size: 1.6rem;
+  }
+  .contato-copy {
+    font-size: 0.75rem;
+    padding: 6px 0;
+  }
+  .contato-container {
+    padding: 15px 8px 6px 8px;
+  }
+  .contato-info li {
+    font-size: 0.9rem;
+  }
+  .contato-likebox {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    height: auto;
+    border-radius: 0;
+  }
+  .like-title.vintage {
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+  .like-btn.vintage {
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    min-height: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  .like-btn.vintage .like-count {
+    font-size: 0.7rem;
+    padding: 1px 2px;
+    min-width: 14px;
+  }
+}
+
+/* OVERRIDE GERAL PARA LIKEBOX */
+.contato-likebox {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  min-height: 0 !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* AJUSTES MOBILE - ELIMINAÇÃO TOTAL DE ESPAÇOS */
+@media (max-width: 768px) {
+  /* Footer ZERO padding */
+  .contato-footer {
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Container ZERO gaps */
+  .contato-container {
+    padding: 10px 15px 5px 15px !important;
+    gap: 0 !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+
+  /* Info COLADA */
+  .contato-info {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .contato-info h2 {
+    font-size: 1.4rem !important;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+  }
+
+  .contato-info ul {
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .contato-info li {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    padding: 2px 0 !important;
+  }
+
+  /* LIKEBOX COLADA NO ÚLTIMO LI */
+  .contato-likebox {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 4px 0 0 0 !important; /* Margem mínima */
+    flex-direction: row !important;
+    gap: 12px !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 0 !important; /* Força altura mínima zero */
+    height: auto !important;
+    max-height: 40px !important; /* Limita altura máxima */
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .like-title.vintage {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    flex: 1 !important;
+    line-height: 1.1 !important;
+  }
+
+  /* BOTÃO MEGA COMPACTO */
+  .like-btn.vintage {
+    padding: 6px 16px !important;
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    background: #d4af37 !important;
+    border: 1px solid #d4af37 !important;
+    color: #000 !important;
+    box-shadow: 0 1px 4px rgba(212, 175, 55, 0.2) !important;
+    width: auto !important;
+    min-width: 90px !important;
+    height: 30px !important; /* Altura bem pequena */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+  }
+
+  .like-btn.vintage:hover:not(.liked) {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(212, 175, 55, 0.3);
+  }
+
+  .like-btn.vintage.liked {
+    background: #666;
+    border-color: #666;
+    color: #ccc;
+    box-shadow: none;
+  }
+
+  .like-btn.vintage span[role="img"] {
+    font-size: 1.1rem;
+  }
+
+  .like-btn.vintage .like-count {
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+  }
+
+  /* Copyright COLADO */
+  .contato-copy {
+    margin-top: 8px !important; /* Margem mínima */
+    padding: 6px 0 !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-container {
+    padding: 8px 10px 4px 10px !important;
+    gap: 0 !important;
+  }
+
+  .contato-info h2 {
+    font-size: 1.2rem !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .contato-info ul {
+    gap: 2px !important;
+    margin: 0 !important;
+  }
+
+  .contato-info li {
+    font-size: 0.85rem !important;
+    padding: 1px 0 !important;
+    margin: 0 !important;
+  }
+
+  .contato-likebox {
+    padding: 0 !important;
+    gap: 8px !important;
+    margin: 2px 0 0 0 !important; /* Margem mínima possível */
+    min-height: 0 !important;
+    height: 28px !important; /* Altura fixa pequena */
+    max-height: 28px !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  .like-title.vintage {
+    font-size: 0.8rem !important;
+    line-height: 1 !important;
+  }
+
+  .like-btn.vintage {
+    padding: 4px 12px !important;
+    font-size: 0.85rem !important;
+    min-width: 80px !important;
+    height: 28px !important;
+    border-radius: 14px !important;
+  }
+
+  .like-btn.vintage span[role="img"] {
+    font-size: 0.9rem !important;
+  }
+
+  .like-btn.vintage .like-count {
+    font-size: 0.8rem !important;
+    padding: 1px 5px !important;
+  }
+
+  .contato-copy {
+    margin-top: 6px !important;
+    padding: 4px 0 !important;
+    font-size: 0.65rem !important;
+  }
+}
