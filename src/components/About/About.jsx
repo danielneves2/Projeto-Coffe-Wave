@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import './About.css';
 // Importar a thumbnail
 import coffeeThumbnail from '../../assets/coffee-thumbnail.jpg';
+// Importar imagens dos valores
+import torrraImg from '../../assets/torra.jpg';
+import qualidadeImg from '../../assets/qualidade.jpg';
+import ambienteImg from '../../assets/ambiente.jpg';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -13,17 +17,17 @@ const About = () => {
 
   const values = [
     {
-      image: '../../src/assets/torra.jpg',
+      image: torrraImg,
       title: 'Tradição Artesanal',
       description: 'Nossa tradição na torra artesanal garante a qualidade e o sabor único em cada grão de café.'
     },
     {
-      image: '../../src/assets/qualidade.jpg',
+      image: qualidadeImg,
       title: 'Qualidade',
       description: 'Selecionamos criteriosamente cada grão para garantir uma experiência excepcional em cada xícara.'
     },
     {
-      image: '../../src/assets/ambiente.jpg',
+      image: ambienteImg,
       title: 'Ambiente',
       description: 'Criamos um espaço acolhedor onde cada momento é uma experiência única e memorável.'
     }
