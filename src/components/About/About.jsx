@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './About.css';
-// Importar o vídeo
-import videoCoffe from '../../assets/videocoffe.mp4';
 // Importar a thumbnail
 import coffeeThumbnail from '../../assets/coffee-thumbnail.jpg';
 
@@ -303,10 +301,13 @@ const About = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-modal" onClick={() => setIsVideoModalOpen(false)}>×</button>
             <div className="video-wrapper">
-              <video controls autoPlay>
-                <source src={videoCoffe} type="video/mp4" />
-                Seu navegador não suporta vídeos.
-              </video>
+              <iframe
+                src="https://www.youtube.com/embed/snZ8jo8m6N4?autoplay=1&rel=0&modestbranding=1"
+                title="Coffee Wave - Nossa História"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
